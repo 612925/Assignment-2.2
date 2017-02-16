@@ -1,0 +1,28 @@
+HDFS:
+-Hadoop Distributed File System is a file system used by hadoop applications for file storage.
+-HDFS breaks a file into numerous pieces and saves it in different systems across the cluster using master-slave architecture.
+-HDFS is developed in such a way that it can run on low hardware commodity machines with high fault tolerance.
+-Provides fast transfer of data between nodes in the cluster.
+-It can handle server issue, hardware failure and disk problems.
+-It uses blocks for storing the file in different system with default size of block as 128mb(hadoop 2.X) and 64mb(hadoop 1.X).
+-It is an important tool in solving a big data problem and supporting big data analytics applications.
+-It reduces the risk of data loss by using data redundancy on different server track.
+
+HDFS CLUSTER:
+A Hadoop cluster is based on master slave architecture and it is a computational cluster designed specifically for storing 
+and analyzing huge amounts of unstructured data. 
+These cluster are open source and this makes it flexible for people to alter it to their needs.
+Since the cluster is open source, it is hardly debated and developed by professionals all around the world.
+There are master and slave machines in the cluster to maintain the hierarchy.
+ Masters in the HDFS are NameNode and JobTracker(in Hadoop 1.X) or ResourceManager(in Hadoop 2.X)  
+The rest of the machines in the cluster act as both DataNode and TaskTracker(Hadoop 1.X) or NodeManager(Hadoop 2.X) and are called slaves.
+
+HDFS blocks:
+HDFS stores huge data into small units called block.
+Default size of a block is 128mb(hadoop 2.X) and 64mb(hadoop 1.X)
+HDFS distributes these blocks in the NameNodes, also duplicating it on some system to prevent data loss. 
+By using these blocks, we can reduce the seek time as low as possible.
+Blocks are stored in a continous manner in a HDFS system.
+One block can also contain data from two different files, for e.g
+For a 100Mb file, a block of 64mb is used
+1 full block of 64mb is utilised and 1 block of 36Mb is utilised, the rest of 64mb in the second file can be utilised by another file also.
